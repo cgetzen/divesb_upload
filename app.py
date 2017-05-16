@@ -20,6 +20,7 @@ def edit_json(info, filename):
     names = ["price", "description", "name"]
     item = {name: info[name] for name in names}
     item["image"] = filename
+    item["price"] = float(item["price"])
 
     with open("menu.json") as f:
         data = json.load(f)
