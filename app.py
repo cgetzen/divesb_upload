@@ -52,7 +52,7 @@ def result():
    if request.method == 'POST':
       result = request.form
       f = request.files['image']
-
+      f.filename = result['filename'] + f.filename[-4:]
       print(f)
 
       download_json()
