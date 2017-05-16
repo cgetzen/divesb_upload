@@ -1,0 +1,21 @@
+<html>
+  <body>
+    <form action = "http://localhost:5000/result" method = "POST" enctype="multipart/form-data">
+      <p>Name <input type = "text" name = "name" /></p>
+      <p>Price <input type = "text" name = "price" /></p>
+      <p>Description <input type = "text" name = "description" /></p>
+      <p><input type="file" name="image" accept="camera/*" capture="environment"></p>
+      <p>
+        <select name = "Category">
+          <option value="for your party">for your party</option>
+          <option value="for your munchies">for your munchies</option>
+          <option value="for your kitchen">for your kitchen</option>
+          <option value="for your bathroom">for your bathroom</option>
+          <option value="for your house">for your house</option>
+          <option value="for school">for school</option>
+        </select>
+      </p>
+      <p><input type = "submit" value = "submit" /></p>
+    </form>
+   </body>
+</html>
