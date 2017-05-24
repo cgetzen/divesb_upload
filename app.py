@@ -27,7 +27,7 @@ def edit_json(info, filename):
 
     for i, category in enumerate(data):
         if category['name'] == info["Category"]:
-            data[i]["items"].append(item)
+            data[i]["items"].insert(int(info["index"])-1, item)
 
     with open("menu.json.out", "w") as f:
         json.dump(data, f, indent=4)
@@ -36,7 +36,7 @@ def edit_json(info, filename):
 def upload_json():
     ftp = connect_to_ftp()
     ftp.cwd("/api/")
-    ftp.storlines("STOR out.menu.json", open("menu.json.out", 'rb'))
+    ftp.storlines("STOR menu.json", open("menu.json.out", 'rb'))
 
 def upload_image(f):
     ftp = connect_to_ftp()
